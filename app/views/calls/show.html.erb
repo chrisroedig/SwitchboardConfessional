@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rec url:</b>
+  <%= @call.rec_url %>
+</p>
+
+<p>
+  <b>Rec length:</b>
+  <%= @call.rec_length %>
+</p>
+
+
+<%= link_to 'Edit', edit_call_path(@call) %> |
+<%= link_to 'Back', calls_path %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rec_url: MyString
+  rec_length: 1
+
+two:
+  rec_url: MyString
+  rec_length: 1
