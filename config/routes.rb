@@ -11,6 +11,7 @@ SwitchboardConfessional::Application.routes.draw do
   match 'call_in_select' => 'twillio_inbound#call_in_select'
   match 'start_recording' => 'twillio_inbound#start_recording'
   match 'finish_recording' => 'twillio_inbound#finish_recording'
+  match 'call_in_options' => 'twillio_inbound#call_in_options'
   match 'listen' => 'twillio_inbound#listen'
   
   resources :calls
