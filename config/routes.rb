@@ -15,7 +15,7 @@ SwitchboardConfessional::Application.routes.draw do
   match 'listen' => 'twillio_inbound#listen'
   
   resources :calls
-  resources :callers
+  #resources :callers
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
