@@ -35,9 +35,6 @@ SwitchboardConfessional::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  # Twilio credentials
-  #config.twilio.sid          = 'ACfedd4c3a70d319316f257c27c4a30a04'
-  #config.twilio.auth_token   = '81bd6bd23b07ef613c99fae28ef63bc3'
-  #config.twilio.phone_number = '6144414859'
+  config.twilio = {:sid =>'bla',:auth_token=>'bla',:number=>'bla'}
 
 end
