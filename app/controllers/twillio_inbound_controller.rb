@@ -19,7 +19,7 @@ class TwillioInboundController < ApplicationController
       # welcome them and redirect to start recording
       response = Twilio::TwiML::Response.new do |r|
         r.Say 'Hello, caller from '+ from_city, :voice=>'woman'
-        r.Redirect '/start_recording'
+        r.Redirect 'tw/start_recording'
       end
     else
       the_calls = the_caller.calls
@@ -27,7 +27,7 @@ class TwillioInboundController < ApplicationController
       response = Twilio::TwiML::Response.new do |r|
         r.Say 'Welcome back!', :voice=>'woman'
         r.Say 'You have told me '+the_calls.length.to_s+' secrets', :voice=>'woman'
-        r.Redirect 'call_in_options'
+        r.Redirect 'tw/call_in_options'
       end
     end
   	render :xml => response.text
@@ -41,7 +41,7 @@ class TwillioInboundController < ApplicationController
         g.Say 'Press 2 to tell me another secret', :voice=>'woman'
       end
       r.Say 'Sorry I did not understand your answer', :voice=>'woman'
-      r.Redirect 'call_in_options'
+      r.Redirect 'tw/call_in_options'
     end
     render :xml => response.text
   end
@@ -52,16 +52,16 @@ class TwillioInboundController < ApplicationController
 
     if digits == '1'
       response = Twilio::TwiML::Response.new do |r|
-        r.Redirect '/listen'
+        r.Redirect 'tw/listen'
       end
     elsif digits=='2'
       response = Twilio::TwiML::Response.new do |r|
-        r.Redirect '/start_recording'
+        r.Redirect 'tw/start_recording'
       end
     else
       response = Twilio::TwiML::Response.new do |r|
         r.Say 'Sorry I did not understand your answer', :voice => 'woman'
-        r.Redirect 'call_in_options'
+        r.Redirect 'tw/call_in_options'
       end
     end
     render :xml => response.text
@@ -88,7 +88,7 @@ class TwillioInboundController < ApplicationController
     if not the_caller
       response = Twilio::TwiML::Response.new do |r|
         r.Say 'Sorry, I do not know who you are!'
-        r.Redirect 'call_in_options'
+        r.Redirect 'tw/call_in_options'
       end
     end
 
@@ -103,7 +103,7 @@ class TwillioInboundController < ApplicationController
         played_count+=1
       end
       r.Say 'Those were all the secrets, call back later to hear more', :voice=>'woman'
-      r.Redirect 'call_in_options'
+      r.Redirect 'tw/call_in_options'
     end
     render :xml => response.text
 
@@ -124,7 +124,7 @@ class TwillioInboundController < ApplicationController
     if not the_caller
       response = Twilio::TwiML::Response.new do |r|
         r.Say 'Sorry, I do not know who you are!'
-        r.Redirect 'call_in_options'
+        r.Redirect 'tw/call_in_options'
       end
     end
 
@@ -136,7 +136,7 @@ class TwillioInboundController < ApplicationController
     response = Twilio::TwiML::Response.new do |r|
       r.Say 'Thank You', :voice=>'woman'
       r.Say 'Your secret is NOT safe with us!', :voice=>'woman'
-      r.Redirect 'call_in_options'
+      r.Redirect 'tw/call_in_options'
     end
     render :xml => response.text
 

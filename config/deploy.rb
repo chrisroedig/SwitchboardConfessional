@@ -7,7 +7,7 @@ set :repository,  "git@github.com:chrisroedig/SwitchboardConfessional.git"
 role :web, "switchboard.offroed.com"                          # Your HTTP server, Apache/etc
 role :app, "switchboard.offroed.com"                         # This may be the same as your `Web` server
 role :db,  "switchboard.offroed.com", :primary => true # This is where Rails migrations will run
-role :db,  "switchboard.offroed.com"
+
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"

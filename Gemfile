@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'bootstrap-sass' , '~> 2.1'
 gem 'jquery-rails'
 gem 'twilio-ruby'
 # To use ActiveModel has_secure_password

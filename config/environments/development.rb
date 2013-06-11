@@ -37,4 +37,7 @@ SwitchboardConfessional::Application.configure do
 
   config.twilio = {:sid =>'bla',:auth_token=>'bla',:number=>'bla'}
 
+  #info from git
+  config.repo_info= `git log -1 --pretty=format:'%h - %s (%cn, %cr)' --abbrev-commit`
+
 end

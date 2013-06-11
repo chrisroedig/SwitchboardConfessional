@@ -1,21 +1,15 @@
 SwitchboardConfessional::Application.routes.draw do
+  get "pages/home"
+
   resources :calls
-
-
   resources :callers
 
 
-  match 'sms' => 'twillio_inbound#sms'
-  match 'call' => 'twillio_inbound#call'
-
-  match 'call_in_select' => 'twillio_inbound#call_in_select'
-  match 'start_recording' => 'twillio_inbound#start_recording'
-  match 'finish_recording' => 'twillio_inbound#finish_recording'
-  match 'call_in_options' => 'twillio_inbound#call_in_options'
-  match 'listen' => 'twillio_inbound#listen'
+  #twillio api 
+  match 'tw/:action' => 'twillio_inbound#:action'
   
-  resources :calls
-  #resources :callers
+  #semi statics
+  match '' => 'pages#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
