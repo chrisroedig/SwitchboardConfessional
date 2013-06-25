@@ -14,6 +14,7 @@ This project uses Rails as it's main application and API server. A node.js serve
 ## To start this app in development mode....
 
 * Make sure the configs for node and redis make sense (node.yml and redis.yml)
+* twiml traffic shoudl point to `/tw/call` `/tw/sms` `/tw/call_update`
 * Make sure a redis server is running
 * `rails s` as usual for the rails part
 * `cd node` and then `node server.js development` to start the node server
