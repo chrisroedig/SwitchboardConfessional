@@ -1,0 +1,33 @@
+#config for socket.io server
+development:
+  internal_host: 'localhost'
+  external_host: 'localhost'
+  internal_port: 3030
+  external_port: 3030
+  transorts:
+    - websocket
+    - htmlfile
+    - xhr-polling
+    - jsonp-polling
+
+production:
+  internal_host: 'localhost'
+  external_host: 'localhost'
+  internal_port: 3030
+  external_port: 3030
+  transorts: 
+    - websocket
+    - htmlfile
+    - xhr-polling
+    - jsonp-polling
+
+test:
+  internal_host: 'localhost'
+  external_host: 'localhost'
+  internal_port: 3030
+  external_port: 3030
+  transorts:
+    - websocket
+    - htmlfile
+    - xhr-polling
+    - jsonp-polling

@@ -13,3 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 
+
+update_global = function(id, value){
+	var globals={}
+	globals[id]={'value':value}
+	$.ajax('/events',{
+		type:'POST',
+		dataType:'json',
+		data:{
+			event:{
+				globals:globals,
+				verb:'update_global'
+				},
+		}
+		})
+}

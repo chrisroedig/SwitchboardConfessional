@@ -35,9 +35,21 @@ SwitchboardConfessional::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+
+  # api configs for twilio
   config.twilio = {:sid =>'bla',:auth_token=>'bla',:number=>'bla'}
 
   #info from git
   config.repo_info= `git log -1 --pretty=format:'%h - %s (%cn, %cr)' --abbrev-commit`
+
+  #event behavior thresholds
+  config.event_thresholds = {
+    :storage    => 40,
+    :feed       => 40,
+    :broadcast  => 40,
+    :log        => 40
+  }
+
+
 
 end

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  caller_id: 1
+  call_id: 1
+  globals: MyString
+  verb: MyString
+  params: MyString
+  time: 2013-06-11 15:26:27
+  feed_level: 1
+  storage_level: 1
+  log_level: 1
+  broadcast_level: 1
+  lifetime: 1
+
+two:
+  caller_id: 1
+  call_id: 1
+  globals: MyString
+  verb: MyString
+  params: MyString
+  time: 2013-06-11 15:26:27
+  feed_level: 1
+  storage_level: 1
+  log_level: 1
+  broadcast_level: 1
+  lifetime: 1

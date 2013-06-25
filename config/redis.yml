@@ -1,0 +1,13 @@
+# redis server info
+
+development:
+  host: 'localhost'
+  port: 6379
+
+production:
+  host: 'localhost'
+  port: 6379
+
+test:
+  host: 'localhost'
+  port: 6379

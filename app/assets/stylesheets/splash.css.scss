@@ -10,16 +10,17 @@
 
 body{
 	//background:#C39A6C;
-	background: #080704;
+	background: #525240;
+		color:#23190A;
 }
 
 #banner{
 	
 	height:200px;
-	@include gradient-bg( #432F18,#080704);
+	@include gradient-bg( #080704,#525240);
 	
-	color:#EFDaB7;
-	text-shadow: 1px 1px #060502;
+
+
 	
 	.container{
 		
@@ -28,26 +29,26 @@ body{
 		background-repeat: no-repeat;
 		background-size: 100% auto;
 		background-position:center;
+		//box-shadow: 5px 5px 10px #1A1A14;
+		border-radius:5px;
 
 	}
 	#titleTag{
-		border-bottom: 3px solid #953116;
-		background: rgba(27,18,8,0.5);
+		border-radius: 0 10px 0 0 ;
+		border-bottom: 2px solid #953116;
 		
-		margin-top:20px;
+		background: rgba(27,18,8,0.5);
+		background: rgba(249,251,253,0.7);
+		@include gradient-bg( rgba(248,232,188,0.2),rgba( 247,206,117,0.8));	
+		color:#EFDaB7;
+		color:#953116;
+				margin-top:20px;
 		padding-left:50px;
 
 	}
 }
 #main{
-	
-	  background:#FAECCD;
-	
-	#contentBox{
-		
-	padding:10px;	
-	
-	}	
+
 	#feedBox{
 		ul {
   		list-style-type: none;
@@ -63,17 +64,79 @@ body{
 				.activityResult{ font-size:0.8em;font-weight:bold;}
 			}
 		}
-		border-left: 2px solid #4E7353;
-		color:#B43C1F;
+
+	}
+
+}
+
+.content_section{
+	box-shadow: 5px 5px 10px #1A1A14;
+	border-radius:5px;
+	margin: 10px 0 0 0;
+	background:#FAECCD;
+
+	.content_header{
+		font-size:1.5em;
+		text-transform:uppercase;
+		border-bottom:1px solid #953116;
+		padding:8px;
+		@include gradient-bg( #FAECCD,#FBD491);
+		border-radius:5px 5px 0 0 ;
+		color:#953116;
+	}
+
+	.content_body{
+		padding:5px;
+	}
+
+}
+.scalar{
+	display:inline-block;
+	width:100px;
+	height:100px;
+	border-radius:5px;
+	border: 1px solid #FAFCFD;
+	text-align:center;
+	margin:5px;
+	@include gradient-bg( #FAFCFD,#FAECCD);
+	color:#953116;
+	vertical-align:bottom;
+	.scalar_header{
+		font-size:12px;
+		line-height:22px;
+		font-weight: bold;
+
+			height:20px;
+			width:100px;
+	}
+	.scalar_value{
+		text-align:center;
+		font-size:45px;
+		line-height:55px;
+
+		text-shadow:1px 2px 5px #23190A;
+		height:55px;
+		width:100px;
+
+	}
+	.scalar_unit{
+			font-size:12px;
+		height:20px;
+		width:100px;
+				font-size:12px;
+		line-height:15px;
+
 	}
 }
+
+
 #main-bottom{
 	#envInfo{
-	line-height:1.0em;
-	font-size:0.8em;
+		line-height:1.0em;
+		font-size:0.8em;
 	}
 	line-height:2.0em;
 	color:#683821;
-	box-shadow:0px -10px 5px #080704;
-	@include gradient-bg( #080704,#312310);
+	box-shadow:0px -10px 5px #525240;
+	@include gradient-bg( #525240,#080704);
 }

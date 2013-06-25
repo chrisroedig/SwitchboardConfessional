@@ -1,8 +1,63 @@
-<h2>Welcome</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis porta erat, sed pretium felis pretium at. Sed nec nunc vel lorem tincidunt sagittis vitae sit amet nunc. Sed non malesuada sem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras a tincidunt lectus. Praesent ut pharetra arcu, id aliquet nisl. Donec ullamcorper mollis justo, vitae rhoncus neque rhoncus ut. Fusce diam nibh, pretium ac leo sit amet, venenatis dictum nulla. Vivamus dictum sapien ut leo gravida vestibulum quis eget velit. Mauris dictum odio ut ligula semper, eu mattis ipsum interdum.
+<div class='row'>
+		<div  id='contentBox' class='span8'>
+			<div class='content_section'>
+				<div class='content_header'>Dashboard</div>
+				<div class='content_body' id='scalarPanel'>
 
-Ut id libero adipiscing, vehicula metus et, interdum erat. Phasellus porttitor nibh quis nisl aliquet fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla sit amet ante eu eros mollis pharetra. Curabitur ac diam sed lacus aliquet euismod eget consectetur nulla. Morbi a nisl justo. Mauris vel dui sagittis, pretium felis ut, condimentum tellus. In hac habitasse platea dictumst. Nulla non leo turpis. Integer vel dolor porttitor, adipiscing enim quis, aliquam augue. Suspendisse feugiat lectus in dui fringilla tincidunt. Aliquam suscipit elementum mauris. Cras eu odio at ligula sagittis vehicula. Donec at consectetur tellus, quis tincidunt elit. Suspendisse eget malesuada erat. Phasellus eleifend adipiscing urna vitae interdum.
+				</div>
+			</div>
 
-In ipsum elit, pulvinar condimentum nibh a, mattis mollis metus. Integer tristique ligula et blandit pulvinar. Vivamus et ornare augue. Donec vel orci lacus. Pellentesque ac neque mauris. Ut in arcu ornare, rutrum lorem vel, tempor eros. Aliquam ultricies luctus diam, eu pharetra est malesuada non. Mauris viverra malesuada leo, vitae sodales dui feugiat eu. Ut commodo sagittis enim, fringilla tempus nisl eleifend quis. Duis vitae orci vel lorem pharetra pharetra non ac mi.
+		</div>
+		<div  class='span4'>
+			<div class='content_section'>
+			<div class='content_header'>Activity</div>
+			<div id='feedBox' class='content_body'>
+			<ul>
 
-</p>
+			</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+<script src="http://<%=@node_config[:host]%>:<%=@node_config[:port]%>/socket.io/socket.io.js"></script>
+<script type="text/javascript" id='bootstrapping'>
+	
+	SwitchB.DataInit = {}
+	SwitchB.node_config= <%=raw( @node_config.to_json ) %>;	
+	SwitchB.DataInit.calls = function(){
+  	var calls = new Backbone.Collection();
+  	calls.reset(<%= raw( @calls.to_json ) %>);
+  	return calls;
+   }
+	
+	SwitchB.DataInit.calls = function(){
+  	var callers = new Backbone.Collection();
+  	callers.reset(<%= raw( @callers.to_json )%>);
+  	return callers;
+   }
+
+	SwitchB.DataInit.EventFeed = function(){
+  	var events = new SwitchB.Models.EventFeed();
+  	events.reset(<%= raw( @events.to_json )%>);
+  	return events;
+   }
+  
+  SwitchB.DataInit.globals = <%=raw( @globals.to_json ) %>;
+
+	SwitchB.DataInit.cleanup = function(){
+		SwitchB.DataInit = null;
+		//kill off this tag, for cleanliness
+		$('#bootstrapping').remove()
+	}
+
+
+
+
+</script>
+<script type="text/javascript">
+  $(function() {
+    // Blog is the app name
+    window.router = new SwitchB.Routers.home()
+    Backbone.history.start();
+  });
+</script>

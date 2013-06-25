@@ -1,10 +1,9 @@
 SwitchboardConfessional::Application.routes.draw do
+  
   get "pages/home"
 
-  resources :calls
-  resources :callers
-
-
+  resources :events
+  
   #twillio api 
   match 'tw/:action' => 'twillio_inbound#:action'
   

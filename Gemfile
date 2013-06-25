@@ -7,6 +7,8 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 
+#much prettier hash conditions
+gem "squeel" 
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,8 +23,11 @@ group :assets do
 end
 
 gem 'bootstrap-sass' , '~> 2.1'
+gem 'rails-backbone'
 gem 'jquery-rails'
 gem 'twilio-ruby'
+gem 'redis'
+gem 'whenever'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

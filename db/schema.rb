@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130606005239) do
+ActiveRecord::Schema.define(:version => 20130611192627) do
 
   create_table "callers", :force => true do |t|
     t.string   "number"
@@ -22,10 +22,33 @@ ActiveRecord::Schema.define(:version => 20130606005239) do
 
   create_table "calls", :force => true do |t|
     t.string   "rec_url"
+    t.string   "twillio_sid"
+    t.string   "status"
     t.integer  "rec_length"
+    t.integer  "play_count"
+    t.integer  "play_length"
     t.integer  "caller_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "events", :force => true do |t|
+    t.integer  "caller_id"
+    t.integer  "call_id"
+    t.string   "globals"
+    t.string   "verb"
+    t.string   "params"
+    t.datetime "time"
+    t.integer  "feed_level",      :default => 30
+    t.integer  "storage_level",   :default => 30
+    t.integer  "log_level",       :default => 10
+    t.integer  "broadcast_level", :default => 30
+    t.integer  "lifetime",        :default => 86400
+    t.datetime "expires_at"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
 end
